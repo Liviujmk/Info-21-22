@@ -156,6 +156,27 @@ void afisareElCifMica(int v[100])
     }
 }
 
+void cmmdc(int a, int b){
+    while(a!=b){
+        if(a>b)
+            a=a-b;
+        else
+            b=b-a;
+    }
+    cout<<a;
+}
+
+void cmmmc(int a, int b){
+    int x=a, y=b;
+    while(x!=y){
+        if(a>b)
+            x=x-y;
+        else
+            y=y-x;
+    }
+    cout<<(a*b)/x;
+}
+
 int main()
 {
     int v[100];
@@ -289,7 +310,10 @@ int main()
     v[k]=z;
     cout<<"\n";
     afisare(v, n+1);
-
+    
+    cmmdc(20, 32);
+    cout<<endl;
+    cmmmc(20,32);
     return 0;
 }
 
