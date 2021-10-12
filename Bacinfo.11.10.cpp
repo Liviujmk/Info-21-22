@@ -119,6 +119,39 @@ int treidoi ()
 return 0;
 }
 
+int treiunu()
+{
+    int n, s=0, k=0, aux, m;
+    cin>>n;
+    for(int d=2; d<=n; d++)
+    {
+        k=0;
+        aux=n;
+        while(aux%d==0)
+        {
+            k++;
+            aux=aux/d;
+        }
+        m=1;
+        for(int l=2; l<=sqrt(d); l++)
+        {
+            if(d%l==0)
+            {
+                m=0;
+                break;
+            }
+        }
+        if(k%2==1&&m!=0)
+            s=s+d;
+        if(n%d==0)
+            n/=d;
+
+    }
+    cout<<s;
+    return 0;
+
+}
+
 int main()
 {
     //iiex1c();
