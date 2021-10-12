@@ -51,106 +51,62 @@ void iiex3(){
     cout<<fs.a/fs.b
 }
 
-/*
-void iii1-divPrim(int n, int s){
-    s=0;
-
-}*/
-int prim(int n){
-    int nr=0;
-    for(int d=2; d<=sqrt(n);d++)
-        if(n%d==0)
-            nr=1;
-
-    if(nr==0)
-        return 1;
-    return 0;
-}
-/*
-void divizori(){
-    int n=30, s=0;
-    for(int d=2; d<=n/2;d++){
-        if(n%d==0){
-            if(prim(d)){
-                s=s+d;
-
-            }
-        }
-    }
-
-
-}*/
-
-int treidoi ()
+/*void divPrim()
 {
-    int n, k, l=0;
-    char s[10], st[100];
-    cin>>n>>k;
-    int auxk=k;
-    for(int i=1; i<=n; i++)
-    {
-        cin>>s;
-        strcpy(st+strlen(st), s);
-        strcpy(st+strlen(st), " ");
-        if(s[strlen(s)-1]=='a' || s[strlen(s)-1]=='e' || s[strlen(s)-1]=='i' || s[strlen(s)-1]=='o' || s[strlen(s)-1]=='u')
-            l++;
-
-    }
-    char *p;
-    p=strtok(st, " ");
-    while(p)
-    {
-
-        if(l==auxk)
-        {
-            if(k!=0)
-                if(p[strlen(p)-1]=='a' || p[strlen(p)-1]=='e' || p[strlen(p)-1]=='i' || p[strlen(p)-1]=='o' || p[strlen(p)-1]=='u')
-                {
-                    cout<<p<<" ";
-                    k--;
-                }
-        }
-        p=strtok(NULL, " ");
-    }
-
-        if(l!=auxk)
-            cout<<"Nu exista k astfel de cuvinte";
-
-return 0;
-}
-
-int treiunu()
-{
-    int n, s=0, k=0, aux, m;
+    int d=2, n, s=0;
     cin>>n;
-    for(int d=2; d<=n; d++)
+    while(n>1)
     {
-        k=0;
-        aux=n;
-        while(aux%d==0)
-        {
-            k++;
-            aux=aux/d;
-        }
-        m=1;
-        for(int l=2; l<=sqrt(d); l++)
-        {
-            if(d%l==0)
+        int p=0;
+        while(n%d==0)
             {
-                m=0;
-                break;
+                p++;
+                n=n/d;
             }
-        }
-        if(k%2==1&&m!=0)
-            s=s+d;
-        if(n%d==0)
-            n/=d;
-
+        if(p%2==1)
+            {
+                s=s+d;
+            }
+        d++;
     }
     cout<<s;
-    return 0;
+}*/
 
-}
+/*void ex2_sub3()
+{
+    int n, k;
+    char a[10], vocale[]="aeiou";
+    cout<<"n= "; cin>>n;
+    cout<<"k= "; cin>>k;
+    for(int i=0; i<n; i++)
+        {
+            cin>>a;
+            if(strchr(vocale, a[strlen(a)-1]) && k!=0)
+            {
+                k--;
+                cout<<a<<endl;
+            }
+        }
+}*/
+
+/*void ex3_sub3()
+{
+    int sufix, nr1, nr2, u=0, pr=0;
+    f>>sufix>>nr1;
+    while(f>>nr2)
+    {
+        if(nr1%1000==sufix && nr2%1000==sufix)
+        {
+            u=nr2;
+            pr=nr1;
+        }
+        nr1=nr2;
+    }
+    if(u!=0)
+        cout<<pr<<" "<<u;
+    else
+        cout<<"nu exista";
+}*/
 
 int main()
 {
