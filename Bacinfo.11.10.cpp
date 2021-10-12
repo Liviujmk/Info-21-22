@@ -81,16 +81,42 @@ void divizori(){
 
 }*/
 
-void III2(){
-    int n,k;
-    char c[10];
+int treidoi ()
+{
+    int n, k, l=0;
+    char s[10], st[100];
     cin>>n>>k;
-    char aux[10];
-    for(int i=1; i<=n;i++){
-        cin.getline(c,10);
-        cin.get();
-        cout<<c[strlen(c)];
+    int auxk=k;
+    for(int i=1; i<=n; i++)
+    {
+        cin>>s;
+        strcpy(st+strlen(st), s);
+        strcpy(st+strlen(st), " ");
+        if(s[strlen(s)-1]=='a' || s[strlen(s)-1]=='e' || s[strlen(s)-1]=='i' || s[strlen(s)-1]=='o' || s[strlen(s)-1]=='u')
+            l++;
+
     }
+    char *p;
+    p=strtok(st, " ");
+    while(p)
+    {
+
+        if(l==auxk)
+        {
+            if(k!=0)
+                if(p[strlen(p)-1]=='a' || p[strlen(p)-1]=='e' || p[strlen(p)-1]=='i' || p[strlen(p)-1]=='o' || p[strlen(p)-1]=='u')
+                {
+                    cout<<p<<" ";
+                    k--;
+                }
+        }
+        p=strtok(NULL, " ");
+    }
+
+        if(l!=auxk)
+            cout<<"Nu exista k astfel de cuvinte";
+
+return 0;
 }
 
 int main()
