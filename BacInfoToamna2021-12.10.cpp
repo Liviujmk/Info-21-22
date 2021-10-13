@@ -43,8 +43,9 @@ void II3(){
         struct date dp;
         int venit;
     }a[30];
-    a[1].dp.anNastere = 2000;
-    a[1].venit = 4000;
+
+    a[0].dp.anNastere = 2000;
+    a[0].venit = 4000;
 }
 
 void III1(int n){
@@ -55,11 +56,49 @@ void III1(int n){
 }
 
 void III2(){
-    
+    int n, k, nr=0, a[100][100];
+    cin>>k>>n;
+    for(int i=1; i<=n;i++)
+        a[i][i]=i*k;
+
+    for(int i=1;i<=n;i++)
+        for(int j=i+1;j<=n;j++)
+            a[i][j]=a[i][j-1]+1;
+
+    for(int i=1;i<=n;i++)
+        for(int j=i-1;j>=1;j--)
+            a[i][j]=a[i][j+1]-1;
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+}
+
+void III3()
+{
+    ifstream fin("numere.in");
+    int na, nb, a[100], b[100], nr = 0;
+    fin>>na>>nb;
+    for(int i = 1; i<=na;i++)
+        fin>>a[i];
+    for(int j = 1; j<=nb;j++)
+        fin>>b[j];
+    for(int i = 1; i<=na; i++)
+        for(int j = 1; j<=nb; j++)
+    {
+        int uc = a[i]%100;
+        int aux=  uc/10;
+        int auxuc = (uc%10)*10+aux;
+        if(uc == b[j]%100 || auxuc == b[j]%100)
+            nr++;
+    }
+    cout<<nr;
 }
 
 int main()
 {
-    III1(4);
+    //
     return 0;
 }
