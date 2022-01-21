@@ -152,3 +152,32 @@ int main() {
 
     return 0;
 }
+
+/////v.26.III.4
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("nr1.txt");
+ifstream g("nr2.txt");
+
+int v[]={4,6,2,7,5,9};
+
+void sterge(int v[], int n, int i, int j){
+    int k,p;
+    for(p=i;p<=j;p++) {
+        for(k=p;k<=n-2;k++)
+            v[k]=v[k+1]; 
+        n--;
+    }
+    for(int i=0;i<=n;i++) {
+        cout<<v[i]<<" ";
+    }
+}
+
+int main() {
+    
+    sterge(v, 6, 2, 4);
+    return 0;
+}
