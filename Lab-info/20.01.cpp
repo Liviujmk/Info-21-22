@@ -33,6 +33,23 @@ int main()
 #include <iostream>
 #include <fstream>
 
+
+//////v.26.III.3
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n,k,i;
+    cin>>n>>k;
+    for(i=k; i>0; i--){
+        cout<<i*n<<" ";
+    }
+    
+    return 0;
+}
+
+
 using namespace std;
 
 ifstream f("numere.txt");
