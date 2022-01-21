@@ -162,7 +162,6 @@ using namespace std;
 ifstream f("nr1.txt");
 ifstream g("nr2.txt");
 
-int v[]={4,6,2,7,5,9};
 
 void sterge(int v[], int n, int i, int j){
     int k,p;
@@ -177,7 +176,7 @@ void sterge(int v[], int n, int i, int j){
 }
 
 int main() {
-    
+    int v[]={4,6,2,7,5,9};
     sterge(v, 6, 2, 4);
     return 0;
 }
