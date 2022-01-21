@@ -54,3 +54,37 @@ int main()
     
     return 0;
 }
+
+
+///// v.19.III.3
+
+#include <iostream>
+
+using namespace std;
+
+void aranjare(double a[], int n)
+{
+    for(int i = 0; i < n - 1; i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(a[i] > a[j])
+            {
+                int aux = a[i];
+                a[i] = a[j];
+                a[j] = aux;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++)
+        cout << a[i] << " ";
+    cout << "\n";
+}
+
+int main()
+{
+    double v[]={12, -7.5, 6.5, -3, -8, 7.5};
+    int n=6;
+    aranjare(v,n);
+    return 0;
+}
