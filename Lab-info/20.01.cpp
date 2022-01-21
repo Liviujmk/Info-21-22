@@ -88,3 +88,50 @@ int main()
     aranjare(v,n);
     return 0;
 }
+
+//// v.19.III.4
+/* 
+
+nr1.txt:
+5
+3 6 8 9 12
+
+nr2.txt:
+6
+3 5 7 9 13
+
+*/
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("nr1.txt");
+ifstream g("nr2.txt");
+
+int main() {
+    int v[10000]={0}, x,i, Max=0;
+    int n,m;
+    f>>n;
+    for(i=0;i<=n;i++){
+        f>>x;
+        if(x>Max)
+            Max=x;
+        v[x]++;
+    } f.close();
+    
+    g>>m;
+    for(i=0;i<=m;i++){
+        g>>x;
+        if(x>Max)
+            Max=x;
+        v[x]++;
+    } g.close();
+    
+    for(i=0;i<=Max;i++)
+        if(v[i])
+            cout<<i<<" ";
+
+    return 0;
+}
