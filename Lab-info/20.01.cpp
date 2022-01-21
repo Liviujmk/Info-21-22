@@ -26,3 +26,31 @@ int main()
     cout<<count(v,n);
     return 0;
 }
+
+
+/////// v.18.III.4
+//numere.txt: 26 2 5 30 13 45 62 7 79
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("numere.txt");
+
+int main()
+{
+    int k,x,ok=0,poz=0;
+    cin>>k;
+    while(f>>x){
+        if(x>=k)
+            poz++;
+        if(x==k)
+            ok=1;
+    }
+    if(ok==1)
+        cout<<poz;
+    else 
+        cout<<"nu exista";
+    
+    return 0;
+}
