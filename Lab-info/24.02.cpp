@@ -40,3 +40,28 @@ int main(){
   cout<<s;
   return 0;
 }
+
+//III.3
+
+//122 1635 628 1413 1647 900 3001 4252
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("cin.txt");
+
+int main(){
+  int x, px, ux;
+  while(f>>x){
+    if(x%2==1){
+        px=ux;
+        ux=x;
+    }
+  }
+  if(px!=-1)
+     cout<<px<<" "<<ux;
+    else
+     cout<<"Nu esista";
+  return 0;
+}
