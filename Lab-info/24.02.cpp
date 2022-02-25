@@ -65,3 +65,34 @@ int main(){
      cout<<"Nu esista";
   return 0;
 }
+
+// v - 7
+//II.1.d
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("cin.txt");
+
+int main(){
+  int x,y,n,c;
+  cin>>x;
+  n=0;
+  if(x!=0){
+    do{
+      y=x;
+      c=0;
+      while(y>0){
+        if(y%10>c)
+          c=y%10;
+        y/=10;
+      }
+      n=n*10+c;
+      cin>>x;
+    }while(x!=0);
+  }
+  cout<<n;
+  return 0;
+}
+
