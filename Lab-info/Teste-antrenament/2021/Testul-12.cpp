@@ -28,3 +28,31 @@ int main()
     cout<<z;
     return 0;
 }
+
+
+III.2
+    
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, k, a[21][21], i, j, aux;
+    cin>>n>>k;
+    for(i=1;i<=n;i++)
+        for(j=1;j<=n;j++)
+            cin>>a[i][j];
+            
+    aux=a[k][1];
+    for(j=1;j<n-k;j++)
+        a[k][j] = a[k][j+1];
+    a[k][n-k] = aux;
+    
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}
