@@ -56,3 +56,24 @@ int main()
     }
     return 0;
 }
+
+III.3
+    
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, x,k=0;
+    cin>>x;
+    while(f>>n){
+        if(n>=k)
+            k++
+    }
+    cout<<k;
+    f.close();
+    
+    return 0;
+}
+
