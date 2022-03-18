@@ -22,4 +22,26 @@ III
     }
    
   3. 
-  
+  int main()
+  {
+    int na, nb, x[100] = {0}, y[100] = {0}, p=0, nr;
+    f>>na>>nb;
+    for(int i=1;i<=na;i++){
+        f>>nr;
+        x[nr%100]++;
+    }
+    for(int i=1;i<=nb;i++){
+        f>>nr;
+        y[nr%100]++;
+    }
+    for(int i=0;i<=99;i++){
+        if(x[i]!=0){
+            if(y[i]!=0)
+                p = p+x[i]*y[i];
+            if(y[i%10 * 10 + i/10]!=0)
+                p = p+x[i]*y[i%10 * 10 + i/10];
+        }
+    }
+    cout<<p;
+    return 0;
+  }
