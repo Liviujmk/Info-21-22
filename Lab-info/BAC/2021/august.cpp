@@ -12,4 +12,14 @@ III
       }
   
   2. 
+  int n, k, nr=0, a[100][100],x;
+    cin>>k>>n;
+    
+    for(int i=1; i<=n;i++){
+        a[i][1] = i*k-i+1;
+        for(int j=2;j<=n;j++)
+            a[i][j] = a[i][j-1]+1;
+    }
+   
+  3. 
   
