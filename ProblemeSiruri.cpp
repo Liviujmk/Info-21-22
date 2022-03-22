@@ -153,8 +153,32 @@ void ex14() {
   
 }
 
+void ex15(){
+    cin.getline(s,100);
+    char *cuv = strtok(s, " ");
+    while(cuv!=NULL) {
+        cout<<cuv<<" ";
+        reverse(cuv, cuv+strlen(cuv));
+        cout<<cuv;
+        cout<<endl;
+        cuv = strtok(NULL, " ");
+    }
+}
+
+void ex16(){
+    cin.getline(s,100);
+    int nr=0, r[256]={0};
+    
+    for(int i=0;i<strlen(s);i++)
+        r[(int)s[i]]++;
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]!=' ')
+            cout<<"Litera '"<<s[i]<<"' apare de "<<r[(int)s[i]]<<" ori"<<endl;
+    }
+}
+
 int main()
 {
-  ex9();
+  ex16();
   return 0;
 }
