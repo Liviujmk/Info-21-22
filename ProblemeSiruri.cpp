@@ -78,12 +78,79 @@ void ex8(){
 
 void ex9(){
   cin>>s;
-  int nr=0;
+  int nr=0, n=0,m=0;
   for(int i=0;i<strlen(s);i++){
     if('A'<=s[i] && 'Z' >=s[i])
+      m++;
+    else
+    if('a'<=s[i] && 'z' >=s[i])
+      n++;
+    else
+    if('1'<=s[i] && '9' >=s[i])
       nr++;
   }
-  cout<<nr;
+  cout<<m<<" "<<n<<" "<<nr;
+}
+
+void ex10() {
+  cin>>s;
+  int k=0;
+  char s2[strlen(s)];
+  for(int i=0; i<strlen(s);i++){
+    if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+      s2[k]=s[i];
+      k++;
+    }
+  }
+  cout<<s2;
+}
+
+void ex11() {
+  cin>>s;
+  cout<<strlen(s); 
+}
+
+void ex12() {
+  cin>>s;
+  for(int i=0;i<strlen(s);i++){
+    if('A'<=s[i] && 'Z' >=s[i])
+      cout<<s[i]<<" ";
+  }
+}
+
+void ex13() {
+  cin.getline(s,100);
+  char *p = strtok(s, " .,");
+  while(p!=NULL) {
+    cout<<p<<endl;
+    p = strtok(NULL, " .,");
+  }
+}
+
+void ex14() {
+  cin.getline(s,100);
+  cin.get();
+  cin.getline(t,100);
+  int ns=0, nt=0;
+  char s1[100], t1[100];
+  strcpy(s1, s);
+  strcpy(t1, t);
+  char *p = strtok(s, " .,");
+  while(p!=NULL) {
+    ns++;
+    p = strtok(NULL, " .,");
+  }
+  
+  char *r = strtok(t, " .,");
+  while(r!=NULL) {
+    nt++;
+    r = strtok(NULL, " .,");
+  }
+  if(ns>nt)
+    cout<<"Prop 1: "<<s1<<" - si are "<<ns<<" cuvinte"<<endl;
+  else
+    cout<<"Prop 2: "<<t1<<" - si are "<<nt<<" cuvinte"<<endl;
+  
 }
 
 int main()
