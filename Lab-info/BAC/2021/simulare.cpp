@@ -32,3 +32,38 @@ III.1
     }
     return 0;
     }
+
+III.2
+  #include <iostream>
+  using namespace std;
+
+  int n,d,p;
+  int main()
+  {
+      int n, i,j, a[100][100], k;
+      cin>>n>>k;
+      for( i=1; i<=n; i++)
+          for( j=1; j<=n; j++)
+              cin>>a[i][j];
+      cout<<endl;     
+      for( i=1; i<=n; i++){
+          for( j=1; j<=n; j++)
+              cout<<a[i][j]<<" ";
+          cout<<endl;
+      }
+      cout<<endl<<i<<"   "<<endl;int aux;
+      for(j=1;j<=n/2;j++)
+          if(i>j){
+              aux=a[k][j];
+              a[k][j]=a[k][n/2-1];
+              a[k][n/2-1]=aux;  
+          };
+
+      for( i=1; i<=n; i++){
+          for( j=1; j<=n; j++)
+              cout<<a[i][j]<<" ";
+          cout<<endl;
+      }
+      return 0;
+
+  }
