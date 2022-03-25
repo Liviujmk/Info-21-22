@@ -56,3 +56,27 @@ int main()
     return 0;
 }
 
+3.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.txt");
+
+
+
+int main()
+{
+    int x,y, n,i;
+    cin>>x>>y;
+    n=(y-x)/2;
+    cout<<y<<" "<<x<<" ";
+    for(i=n-1; i>=1; i--){
+        y=x;
+        x=x-2*i;
+        cout<<x<<" ";
+    }
+    return 0;
+}
