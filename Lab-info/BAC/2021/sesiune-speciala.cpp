@@ -37,12 +37,17 @@ int main()
             cin>>a[i][j];
 
     cin>>k;
-    for(i=1;i<=k-1;i++)
+    /*for(i=1;i<=k-1;i++)
         for(j=1;j<=k-1;j++){
             aux = a[k][j];
             a[k][j] = a[i][k];
             a[i][k] = aux;
-        }
+        }*/
+    for(i=1;i<=k-1;i++){
+        aux = a[i][k];
+        a[i][k] = a[k][i];
+        a[k][i] = aux;
+    }
     for( i=1; i<=n; i++){
         for( j=1; j<=n; j++)
             cout<<a[i][j]<<" ";
@@ -50,3 +55,4 @@ int main()
     }
     return 0;
 }
+
