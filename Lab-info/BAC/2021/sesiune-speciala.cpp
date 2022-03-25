@@ -21,3 +21,32 @@ void imog(int x, int y, bool & rez){
     else 
         rez=0;
 }
+
+2.
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    int n, i,j, a[100][100], k, aux;
+    cin>>n;
+    for( i=1; i<=n; i++)
+        for( j=1; j<=n; j++)
+            cin>>a[i][j];
+
+    cin>>k;
+    for(i=1;i<=k-1;i++)
+        for(j=1;j<=k-1;j++){
+            aux = a[k][j];
+            a[k][j] = a[i][k];
+            a[i][k] = aux;
+        }
+    for( i=1; i<=n; i++){
+        for( j=1; j<=n; j++)
+            cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+    return 0;
+}
