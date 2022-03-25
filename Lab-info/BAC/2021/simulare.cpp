@@ -54,3 +54,23 @@ int main()
 
 III.3
 
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.txt");
+
+int main()
+{
+    int v[11] = {0}, x,s=0,i;
+    while(f>>x)
+        v[x]++;
+    for( i=1; i<=10; i++)
+        if(v[i]!=0)
+            s = s + i*i*v[i]+10;
+    cout<<s;
+    f.close();
+    return 0;
+}
+
