@@ -170,11 +170,9 @@ void ex16(){
     int nr=0, r[256]={0};
     
     for(int i=0;i<strlen(s);i++)
-        r[(int)s[i]]++;
-    for(int i=0;i<strlen(s);i++){
-        if(s[i]!=' ')
-            cout<<"Litera '"<<s[i]<<"' apare de "<<r[(int)s[i]]<<" ori"<<endl;
-    }
+        r[int(s[i])]++;
+    for(int i=65;i<123;i++)
+        cout<<"Litera "<<char(i)<<" "<<r[i]<<endl;
 }
 
 int main()
