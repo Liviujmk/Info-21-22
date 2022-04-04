@@ -169,10 +169,56 @@ void ex16(){
     cin.getline(s,100);
     int nr=0, r[256]={0};
     
-    for(int i=0;i<strlen(s);i++)
+    /*for(int i=0;i<strlen(s);i++)
         r[int(s[i])]++;
     for(int i=65;i<123;i++)
-        cout<<"Litera "<<char(i)<<" "<<r[i]<<endl;
+        cout<<"Litera "<<char(i)<<" "<<r[i]<<endl;*/
+  
+    /*for(int i=0;i<strlen(s);i++){
+          nr=0;
+          for(int j=0;j<=strlen(t);j++){
+              if(s[i]==t[j])
+                  nr++;
+          }
+          if(s[i] != ' ')
+              cout<<"Litera "<<s[i]<<" apare de "<<nr<<" ori"<<endl;
+      }*/
+}
+
+void ex17(){
+    cin.getline(s,250);
+    strcpy(t, s);
+    char *p = strtok(s, " ");
+    int nr=0;
+    while(p!=NULL){
+        if(strlen(p)>nr)
+            nr = strlen(p);
+        p = strtok(NULL, " ");
+    }
+
+    char *r = strtok(t, " ");
+    while(r!=NULL){
+        if(strlen(r)==nr)
+            cout<<r<<endl;
+        r = strtok(NULL, " ");
+    }
+}
+
+void ex18(){
+    cin.getline(s,250);
+    cin.get();
+    cin.getline(t,250);
+    int nr=0, r[256]={0};
+
+    for(int i=0;i<strlen(s);i++)
+        for(int j=0;j<strlen(t);j++)
+            if(s[i]==t[j])
+                r[int(s[i])]++;
+
+    for(int i=65;i<123;i++)
+        if(r[i]>0)
+            cout<<char(i)<<" ";
+
 }
 
 int main()
