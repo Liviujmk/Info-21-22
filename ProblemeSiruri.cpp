@@ -221,6 +221,38 @@ void ex18(){
 
 }
 
+void ex19(){
+    cin.getline(s,250);
+    cin.get();
+    cin.getline(t,250);
+    for(int i=0;i<strlen(s);i++)
+        for(int j=0;j<strlen(s);j++){
+            if((int)s[i]<(int)s[j])
+                swap(s[i], s[j]);
+        }
+
+    for(int i=0;i<strlen(t);i++)
+        for(int j=0;j<strlen(t);j++){
+            if((int)t[i]<(int)t[j])
+                swap(t[i], t[j]);
+        }
+    cout<<s<<endl<<t;
+}
+
+void ex20(){
+    int n, nr;
+    f>>n;
+    while(f>>s){
+        nr=0;
+        for(int i=0;i<strlen(s);i++)
+            if(strchr("bcdfghjklmnpqrstwxyz", s[i]) == NULL)
+                nr++;
+        if(nr==0){
+            cout<<s<<endl;
+        }
+    }
+}
+
 int main()
 {
   ex16();
