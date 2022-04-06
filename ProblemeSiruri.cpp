@@ -253,6 +253,67 @@ void ex20(){
     }
 }
 
+void ex2_1(){
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    cin.get();
+    cin.get(c,250);
+    int ns=strlen(s), nt=strlen(t), nc=strlen(c);
+
+    if (ns>nt && nt>nc)
+        cout<<c<<" <-> "<<t<<" <-> "<<s;
+    else if(ns>nc && nt<nc)
+        cout<<t<<" <-> "<<c<<" <-> "<<s;
+    else if(nt>ns && ns>nc)
+        cout<<t<<" <-> "<<s<<" <-> "<<t;
+    else if(nt>nc && nc>ns)
+        cout<<s<<" <-> "<<c<<" <-> "<<t;
+    else if(nc>nt && nt>ns)
+        cout<<s<<" <-> "<<t<<" <-> "<<c;
+    else if(nc>ns && ns>nt)
+        cout<<t<<" <-> "<<s<<" <-> "<<c;
+}
+
+void ex2_2() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    char aux;
+    for(int i=0;i<3;i++){
+        aux=s[i];
+        s[i]=t[i];
+        t[i]=aux;
+    }
+    cout<<s<<" <-> "<<t;
+}
+
+void ex2_4() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    cin.get();
+    cin.get(c,250);
+    for(int i=0;i<strlen(s);i++)
+        for(int j=0;j<strlen(s);j++){
+            if((int)s[i]<(int)s[j])
+                swap(s[i], s[j]);
+        }
+
+    for(int i=0;i<strlen(t);i++)
+        for(int j=0;j<strlen(t);j++){
+            if((int)t[i]<(int)t[j])
+                swap(t[i], t[j]);
+        }
+
+    for(int i=0;i<strlen(c);i++)
+        for(int j=0;j<strlen(c);j++){
+            if((int)c[i]<(int)c[j])
+                swap(c[i], c[j]);
+        }
+    cout<<s<<endl<<t<<endl<<c;
+}
+
 int main()
 {
   ex16();
