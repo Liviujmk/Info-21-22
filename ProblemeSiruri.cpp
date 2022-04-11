@@ -288,6 +288,19 @@ void ex2_2() {
     cout<<s<<" <-> "<<t;
 }
 
+void ex2_3() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    int x;
+    x=strlen(d);
+    for(int i=0;i<strlen(s)-1;i++){
+        t[x]=s[i];
+        x++;
+        cout<<d<<endl;
+    }
+}
+
 void ex2_4() {
     cin.get(s,250);
     cin.get();
@@ -383,6 +396,18 @@ void ex2_10() {
                 strcpy(s+i, s+i+strlen(t));
     cout<<s;
 }
+
+/*void ex2_11() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t, 250);
+    cin.get();
+    cin.get(c, 250);
+    for(int i=0;i<strlen(s);i++)
+        if(strstr(s, t)!= NULL)
+            
+    cout<<s;
+}*/
 
 int main()
 {
