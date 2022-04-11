@@ -314,6 +314,76 @@ void ex2_4() {
     cout<<s<<endl<<t<<endl<<c;
 }
 
+void ex2_5() {
+    int n;
+    f>>n;
+    while(f>>s){
+        for(int i=0;i<strlen(s);i++)
+            cout<<s[i];
+        cout<<" ";
+        for(int i=strlen(s)-1;i>=0;i--)
+            cout<<s[i];
+        cout<<endl;
+    }
+}
+
+void ex2_6() {
+    int n;
+    f>>n;
+    for(int nc=1;nc<=n;nc++){
+        f>>s;
+        char sr[250];
+        strcpy(sr,s);
+        reverse(sr, sr+strlen(sr));
+        if(strcmp(s, sr)==0)
+            cout<<s<<endl;
+    }
+}
+
+void ex2_7() {
+    char x;
+    cin.get(s,250);
+    cin.get();
+    cin>>x;
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]==x)
+            cout<<i<<" ";
+    }
+}
+
+void ex2_8() {
+    char x;
+    cin.get(s,250);
+    cin.get();
+    cin>>x;
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]==x)
+            strcpy(s+i, s+i+1);
+    }
+    cout<<s;
+}
+
+void ex2_9() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t, 250);
+    for(int i=0;i<strlen(s);i++)
+        if(strstr(s, t)!=NULL)
+            if(s[i]==t[0])
+                cout<<i<<" ";
+}
+
+void ex2_10() {
+    cin.get(s,250);
+    cin.get();
+    cin.get(t, 250);
+    for(int i=0;i<strlen(s);i++)
+        if(strstr(s, t)!=NULL)
+            if(s[i]==t[0])
+                strcpy(s+i, s+i+strlen(t));
+    cout<<s;
+}
+
 int main()
 {
   ex16();
