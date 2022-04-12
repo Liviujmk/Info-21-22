@@ -397,17 +397,80 @@ void ex2_10() {
     cout<<s;
 }
 
-/*void ex2_11() {
+void ex2_11() {
     cin.get(s,250);
     cin.get();
     cin.get(t, 250);
     cin.get();
     cin.get(c, 250);
-    for(int i=0;i<strlen(s);i++)
-        if(strstr(s, t)!= NULL)
-            
+    char *p = strstr(s, t);
+    char aux[250];
+    while(p){
+        strcpy(p, p+strlen(t));
+        strcpy(aux,p);
+        strcpy(p,c);
+        strcpy(p+strlen(c), aux);
+        p=strstr(p+1, t);
+    }
     cout<<s;
-}*/
+}
+
+void ex2_12(){
+    cin.get(s,250);
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]==' ')
+            strcpy(s+i, s+i+1);
+        for(int j=0;j<strlen(s);j++){
+            if((int)s[i]<(int)s[j])
+                swap(s[i], s[j]);
+        }
+    }
+
+    cout<<s;
+}
+
+void ex2_13(){
+    cin.getline(s, 250);
+    char *p = strtok(s, " .,");
+    while(p!=NULL){
+        for(int i=0;i<strlen(p);i++)
+            cout<<p[i];
+        cout<<" ";
+        for(int i=strlen(p)-1;i>=0;i--)
+            cout<<p[i];
+        cout<<endl;
+
+        p=strtok(NULL, " .,");
+    }
+}
+
+void ex2_14(){
+    cin.getline(s, 250);
+    char aux[250];
+    strcpy(aux, s);
+    char *p = strtok(s, " .,");
+    int nr=0;
+    while(p!=NULL){
+        char sr[250];
+        strcpy(sr,p);
+        reverse(sr, sr+strlen(sr));
+        if(strcmp(p, sr)==0)
+            if(strlen(p)>nr)
+                nr=strlen(p);
+        p=strtok(NULL, " .,");
+    }
+
+    char *a = strtok(aux, " .,");
+    while(a!=NULL){
+        char sr[250];
+        strcpy(sr,a);
+        reverse(sr, sr+strlen(sr));
+        if(strcmp(a, sr)==0 && strlen(a)==nr)
+            cout<<a;
+        a=strtok(NULL, " .,");
+    }
+
+}
 
 int main()
 {
