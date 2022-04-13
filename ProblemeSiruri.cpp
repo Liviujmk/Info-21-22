@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-char s[100], t[100];
+char s[250], t[250], c[250], cons[] = "bcdfghjklmnpqrstwxyz", num[]="1234567890", voc[]="aeiou";
 
 void ex1(){
   cin>>s;
@@ -470,6 +470,73 @@ void ex2_14(){
         a=strtok(NULL, " .,");
     }
 
+}
+
+void ex2_15(){
+    cin.get(s, 250);
+    int nr=0;
+
+    //a
+    /*for(int i=0;i<strlen(s);i++)
+        if(strchr(cons, s[i])){
+            nr=1;
+            break;
+        }
+    if(nr==0){
+        cout<<"Sirul e format exclusiv din caractere numerice";
+    }*/
+
+    //b
+    /*for(int i=0;i<strlen(s);i++)
+        if(strchr(num, s[i])){
+            nr=1;
+            break;
+        }
+    if(nr==0){
+        cout<<"Sirul e format exclusiv din caractere non-numerice";
+    }*/
+
+    //c
+    /*for(int i=0;i<strlen(s);i++)
+        if(strchr(cons, s[i])==0){
+            nr++;
+        }
+
+    if(nr==strlen(s)){
+        cout<<"Sirul e format doar din vocale";
+    }*/
+
+    //d
+    for(int i=0;i<strlen(s);i++)
+        if(strchr(voc, s[i])==0){
+            nr++;
+        }
+
+    if(nr==strlen(s)){
+        cout<<"Sirul e format doar din caractere care nu sunt vocale";
+    }
+}
+
+void ex2_16(){
+    cin.get(s, 250);
+    cin.get();
+    cin.get(t, 250);
+    for(int i=0;i<=strlen(s);i++){
+        if(strchr(t, s[i]))
+            cout<<s[i];
+    }
+}
+
+void ex2_17(){
+    cin.get(s, 250);
+    for(int i=0;i<=strlen(s);i++){
+        if(strchr(num, s[i])){
+            if(strchr(num, s[i+1])){
+                cout<<s[i]<<s[i+1];
+                strcpy(s+i+1, s+i+2);
+            }
+        }
+    }
 }
 
 int main()
