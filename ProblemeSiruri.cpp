@@ -526,17 +526,176 @@ void ex2_16(){
             cout<<s[i];
     }
 }
-
+/*
 void ex2_17(){
     cin.get(s, 250);
     for(int i=0;i<=strlen(s);i++){
         if(strchr(num, s[i])){
-            if(strchr(num, s[i+1])){
-                cout<<s[i]<<s[i+1];
-                strcpy(s+i+1, s+i+2);
-            }
+            cout<<s[i];
         }
     }
+}*/
+
+void ex2_18(){
+    int n;
+    f>>n;
+    for(int i=1;i<=n;i++){
+        f>>s;
+        strcat(t,s);
+    }
+    cout<<t;
+}
+
+void ex2_19(){
+    cin.getline(s,250);
+    if((s[0]==' ' && s[1]!=' ') && (s[strlen(s)-1]==' ' && s[strlen(s)-2]!=' ')){
+        strcpy(s, s+1);
+        s[strlen(s)-1]='\0';
+    }
+    cout<<s;
+}
+
+void ex2_20(){
+    cin.getline(s,250);
+    char *p = strtok(s, " ");
+    int nr=0;
+    while(p!=NULL){
+        if(p[0]==p[strlen(p)-1])
+            nr++;
+        for(int i=0;i<strlen(p);i++)
+        for(int j=0;j<strlen(p);j++){
+            if((int)s[i]<(int)p[j])
+                swap(p[i], p[j]);
+        }
+        cout<<p<<endl;
+        p = strtok(NULL, " ");
+    }
+    cout<<nr<<" incep si se termina cu aceeasi litera";
+}
+
+void ex2_21(){
+    int nr1=0;
+    cin.getline(s, 250);
+    for(int i=0;i<=strlen(s);i++)
+        if(s[i]==' ')
+            nr1++;
+    char *p = strtok(s, " ,");
+    int nr2=0;
+    while(p!=NULL){
+        nr2++;
+        for(int i=0;i<strlen(p);i++){
+            if(65<=(int)p[i] && (int)p[i]<=90)
+                p[i]=p[i]+32;
+        }
+        p[0]-=32;
+        cout<<p<<endl;
+        p = strtok(NULL, " ,");
+    }
+    cout<<nr1<<" spatii si "<<nr2<<" cuvinte";
+}
+
+/*
+void insertt(char chr, char str[], int poz, int &stll){
+    int stl=strlen(str);
+    for(int i=stl-1;i>=poz;i--)
+        str[i+1]=str[i];
+    stl++;
+    str[poz]=chr;
+    stll=stl;
+}
+void ex2_22(){
+    cin.get(s,250);
+    int n = strlen(s),stll;
+    for(int i=0;i<n;i++)
+        if(strchr(voc, s[i]))
+            insertt(s[i], s, i+1,stll);
+    for(int i=0;i<stll;i++)
+        cout<<s[i];
+}*/
+
+void ex2_23(){
+    cin.get(s,250);
+    char sr[250];
+    strcpy(sr,s);
+    reverse(sr, sr+strlen(sr));
+    if(strcmp(s, sr)==0)
+        cout<<"DAAAA"<<endl;
+    else
+        cout<<"NUUUUUU";
+}
+
+void ex2_24(){
+    cin.get(s,250);
+    for(int i=0;i<strlen(s);i++){
+        if(97<=(int)s[i] && (int)s[i]<=122)
+            s[i]=s[i]-32;
+    }
+    cout<<s;
+}
+
+void ex2_25(){
+    cin.get(s,250);
+    for(int i=0;i<strlen(s);i++){
+        if(65<=(int)s[i] && (int)s[i]<=90)
+            s[i]=s[i]+32;
+    }
+    cout<<s;
+}
+
+void ex2_26(){
+    cin.get(s,250);
+    char c = 'a';
+    int nr=0;
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]==c)
+            nr++;
+    }
+    cout<<nr;
+}
+
+void ex2_27(){
+    cin.get(s,250);
+    for(int i=1;i<strlen(s);i++){
+        cout<<s+i<<endl;
+    }
+    char rev[250];
+    strcpy(rev, s);
+    reverse(rev, rev+strlen(rev));
+    for(int i=1;i<strlen(rev);i++){
+        char pr[strlen(rev)];
+        strcpy(pr, rev+i);
+        reverse(pr, pr+strlen(pr));
+        cout<<pr<<endl;
+    }
+}
+
+void ex2_28(){
+    cin.get(s,250);
+    char c = 'a';
+    int nr=0,p;
+    for(int i=0;i<strlen(s);i++){
+        if(s[i]==c || s[i]==s[p]-32){
+            nr++;
+            p=i;
+        }
+    }
+    cout<<nr;
+}
+
+void ex2_29(){
+    cin.get(s,250);
+    int nr=0,ok=0;
+    char *p = strtok(s, " .");
+    while(p!=NULL){
+        nr++;
+        for(int i=0;i<strlen(p);i++)
+            if('1'>=p[i] && p[i]<='9'){
+                ok=1;
+                break;
+            }
+        p = strtok(NULL, " ,");
+    }
+    cout<<nr<<" "<<ok;
 }
 
 int main()
