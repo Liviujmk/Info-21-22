@@ -810,10 +810,41 @@ void ex2_36(){
     }
     if(nr==strlen(t))
         cout<<"Da";
+    else
+        cout<<"Nu";
+}
+
+void ex2_37(){
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    char *p = strtok(s, " ");
+    int nr=0;
+    while(p!=NULL)
+    {
+        if(strcmp(t, p)==0)
+            nr++;
+        p=strtok(NULL, " ");
+    }
+    cout<<nr;
+
+}
+
+/*void ex2_38{
+    //nu inteleg cerinta
+}*/
+
+void ex2_39(){
+    cin.get(s, 250);
+    char *p = strtok(s, alf);
+    while(p!=NULL){
+        cout<<p<<endl;
+        p=strtok(NULL, alf);
+    }
 }
 
 int main()
 {
-  ex16();
+  ex2_40();
   return 0;
 }
