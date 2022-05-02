@@ -698,6 +698,120 @@ void ex2_29(){
     cout<<nr<<" "<<ok;
 }
 
+void ex2_30()
+{
+    cin.get(s,250);
+    cin.get();
+    cin.get(t,250);
+    char *p = strtok(s, " ");
+    int nr=0;
+    while(p!=NULL)
+    {
+        if(strcmp(t, p)==0)
+            nr++;
+        p=strtok(NULL, " ");
+    }
+    cout<<nr;
+
+}
+
+void ex2_31()
+{
+    cin.get(s,250);
+    for(int i=0; i<strlen(s); i++)
+    {
+        s[i]=s[i]+2;
+    }
+    cout<<s;
+
+}
+
+void ex2_32()
+{
+    int n=0;
+    while(f>>x)
+    {
+        n++;
+        strcpy(s1[n],x);
+    }
+    for(int i=1; i<n; i++)
+        for(int j=i+1; j<=n; j++)
+            if(strcmp(s1[i],s1[j])>0)
+            {
+                char aux[100];
+                strcpy(aux,s1[i]);
+                strcpy(s1[i],s1[j]);
+                strcpy(s1[j],aux);
+            }
+    for(int i=1; i<=n; i++)
+        cout<<s1[i]<<endl;
+
+}
+
+void ex2_33()
+{
+    cin.get(s,250);
+    /*int x=2;
+    strcpy(t , s + x);
+    strcpy(s + x + 1 , t);
+    s[x] = 'A';*/
+    for(int i=0; i<strlen(s); i++)
+    {
+        if(strchr(voc, s[i])!=NULL)
+        {
+             strcpy(t, s + i);
+            strcpy(s + i + 1, t);
+            s[i] = 'p';
+        }
+    }
+    cout<<s;
+}
+
+void ex2_34()
+{
+    cin.get(s,250);
+    char *p =strtok(s, " ");
+    while(p!=NULL)
+    {
+        if(p[strlen(p)-1]==p[strlen(p)-2])
+            cout<<p[strlen(p)-1]<<p[strlen(p)-2]<<endl;
+        p=strtok(NULL, " ");
+    }
+
+}
+
+void ex2_35(){
+    cin.getline(s,250);
+    strcpy(t, s);
+    char *p = strtok(s, " ");
+    int nr=0;
+    while(p!=NULL){
+        if(strlen(p)>nr)
+            nr = strlen(p);
+        p = strtok(NULL, " ");
+    }
+
+    char *r = strtok(t, " ");
+    while(r!=NULL){
+        if(strlen(r)==nr)
+            cout<<r<<endl;
+        r = strtok(NULL, " ");
+    }
+}
+
+void ex2_36(){
+    cin.get(s,250);
+    cin.get();
+    cin.get(t, 250);
+    int nr=0;
+    for(int j=0;j<strlen(t);j++) {
+        if(strchr(s, t[j])!=NULL)
+            nr++;
+    }
+    if(nr==strlen(t))
+        cout<<"Da";
+}
+
 int main()
 {
   ex16();
