@@ -843,6 +843,30 @@ void ex2_39(){
     }
 }
 
+void ex2_40(){
+    int ok=0;
+    while(f>>s){
+        for(int i=0;i<strlen(s);i++){
+            if(strchr(cons, s[i])!=NULL && strchr(cons, s[i+1])!=NULL && strchr(cons, s[i+2])!=NULL /*|| (strchr(cons, s[i])!=NULL && strchr(cons, s[i+1])!=NULL && strchr(cons, s[i-1])!=NULL) || (strchr(cons, s[i])!=NULL && strchr(cons, s[i-1])!=NULL && strchr(cons, s[i-2])!=NULL)*/)
+                ok=1;
+            if((strchr(voc, s[i])!=NULL && strchr(voc, s[i+1])!=NULL && strchr(voc, s[i-1])!=NULL) || (strchr(voc, s[i])!=NULL && strchr(voc, s[i+1])!=NULL && strchr(voc, s[i+2])!=NULL) || (strchr(voc, s[i])!=NULL && strchr(voc, s[i-1])!=NULL && strchr(voc, s[i-2])!=NULL))
+                ok=2;
+        }
+        if(ok)
+            cout<<s<<" ";
+    }
+}
+
+void ex2_41(){
+    cin.get(s, 250);
+    //strrev(s);
+    for(int i=0;i<strlen(s);i++){
+        if(strchr(voc, s[i])!=NULL)
+            strcpy(s+i, s+i+1);
+    }
+    cout<<s;
+}
+
 int main()
 {
   ex2_40();
