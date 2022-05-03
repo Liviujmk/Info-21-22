@@ -859,16 +859,88 @@ void ex2_40(){
 
 void ex2_41(){
     cin.get(s, 250);
-    //strrev(s);
+    strrev(s);
     for(int i=0;i<strlen(s);i++){
-        if(strchr(voc, s[i])!=NULL)
-            strcpy(s+i, s+i+1);
+        if(strchr(voc, s[i])==NULL)
+            cout<<s[i];
     }
-    cout<<s;
+}
+
+void ex2_42(){
+    cin.get(s, 250);
+    char *p = strtok(s, " ");
+    while(p!=NULL){
+        if(strlen(p)==2)
+            cout<<p<<endl;
+        p=strtok(NULL, " ");
+    }
+}
+
+void ex2_43(){
+    int n=0;
+    while(strcmp(s, "stop")){
+        cin>>s;
+        n++;
+        strcpy(v[n], s);
+    }
+    cout<<endl;
+    for(int i=1;i<=n;i++){
+        if(strcmp(v[i], v[1])>0)
+            cout<<v[i]<<endl;
+    }
+}
+/* ----------nu e gata--------------
+void ex2_44(){
+    cin.get(s, 250);
+    cin.get();
+    cin.get(t,250);
+    for(int i=0;i<strlen(s);i++){
+        for(int j=0;j<strlen(t);j++){
+            if((strchr(voc, s[i])!=NULL && strchr(voc, t[j])!=NULL) && s[i]==t[j])
+                cout<<t[j];
+        }
+    }/*
+
+        if(strchr(voc, t[i]))
+    }*/
+}*/
+
+void ex2_45(){
+    int n=0;
+    /*while(f>>s){
+        n++;
+    }*/
+    cout<<n;
+}
+
+void ex2_46() {
+    int n=0;
+    cin.getline(s,250);
+    char *p = strtok(s, " ");
+    while(p!=NULL)
+    {
+        n++;
+        strcpy(v[n],p);
+        p=strtok(NULL, " ");
+    }
+    for(int i=1; i<n; i++)
+        for(int j=i+1; j<=n; j++)
+            if(strcmp(v[i],v[j])>0)
+            {
+                char aux[100];
+                strcpy(aux,v[i]);
+                strcpy(v[i],v[j]);
+                strcpy(v[j],aux);
+            }
+    for(int i=1; i<=n; i++){
+        strcat(t, v[i]);
+    }
+    cout<<t;
+
 }
 
 int main()
 {
-  ex2_40();
+  ex2_46();
   return 0;
 }
