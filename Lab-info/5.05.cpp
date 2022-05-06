@@ -80,3 +80,21 @@ int main()
     f.close();
     return 0;
 }
+
+
+
+HUNEDOARA
+II.3 
+char litere[]="ABCDEF...."
+p=strtok(s, " ");
+while(p){
+    strcpy(cuv, p);
+    u=strlen(cuv);
+    i=0;
+    while(i<n)
+        if(strchr(litere, cuv[i])!=NULL)
+            strcpy(cuv+i, cuv+i+1);
+        if(strstr(p, "TIC")!=NULL)
+            strcat(p);
+            strcat(" ");
+}
