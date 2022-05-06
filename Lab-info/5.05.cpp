@@ -50,3 +50,33 @@ int main()
             a[i][j]=i+j-1;
     return 0;
 }
+
+III.3
+    #include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.txt");
+
+int main()
+{
+    int x, y,lg, lgmax;
+    f>>x;
+    if(x%2==0)
+        lg=1;
+    else
+        lg=0;
+    while(f>>y){
+        if(y%2==0){
+            lg++;
+            if(lg>lgmax)
+                lgmax=lg;
+        }
+        else lg=0;
+        x=y;
+    }
+    cout<<lgmax;
+    f.close();
+    return 0;
+}
