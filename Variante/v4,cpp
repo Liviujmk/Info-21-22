@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+/*ifstream f("bac1.txt");
+ifstream g("bac2.txt");
+
+int joc(int n){
+    int nr=0;
+    for(int i=2;i<=n;i++){
+        if(n%i==0)
+            nr++;
+    }
+    return nr;
+}*/
+
+int main()
+{
+    int a[100][100], m,n,maxx;
+    cin>>m>>n;
+    for(int i=1;i<=m;i++)
+        for(int j=1;j<=n;j++)
+            cin>>a[i][j];
+    for(int i=1;i<=m;i++){
+        maxx=0;
+        for(int j=1;j<=n;j++)
+            if(a[i][j]>maxx && a[i][j]<21)
+                maxx = a[i][j];
+        if(maxx<21)
+            cout<<maxx<<endl;
+        else
+            cout<<"Nu exista";
+    }
+    return 0;
+}
